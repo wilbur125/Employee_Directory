@@ -1,9 +1,9 @@
-import EmployeeTable from './components/EmployeeTable';
+import Container from './components/Container';
 import './App.css';
 
 function App() {
   return (
-      <EmployeeTable/>
+      <Container/>
   );
 }
 

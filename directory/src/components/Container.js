@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import SearchForm from './SearchForm';
-import EmployeeTable from './EmployeeTable';
-import Header from './Header';
 import API from '../utils/API';
-import { Card, ListGroup } from 'react-bootstrap'; 
+import Header from './Header';
+import EmployeeFilter from './EmployeeFilter';
+import EmployeeSort from './EmployeeSort';
+import EmployeeTable from './EmployeeTable';
+
+
 
 class Container extends Component {
     state = {
         result: {},
         employees: [],
         filtered: [],
-        sorted: '',
-        filterChoice: ''
+        filterChoice: '',
+        sorted: ''
     }
 
     componentDidMount() {
@@ -23,6 +25,31 @@ class Container extends Component {
     }
 
     //define the function handleFilter
-    //define the function handleSort
+
+    //define a function to filter the results
     
+    //define the function handleSort
+
+    //define a function to sort the results
+
+
+   render() {
+       return (
+           <div>
+                <Header/>
+                <EmployeeFilter
+                value={this.state.filterChoice}
+                handleFilter={this.handleFilter}
+                />
+                <EmployeeSort
+                handleSort={this.handleSort}
+                />
+                <EmployeeTable
+
+                />
+           </div>
+       )
+   } 
 }
+
+export default Container;
